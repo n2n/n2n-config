@@ -25,6 +25,7 @@ use n2n\io\IoUtils;
 use n2n\io\IoException;
 use n2n\util\ini\IniRepresentation;
 use n2n\config\source\WritableConfigSource;
+use n2n\config\source\CorruptedConfigSourceException;
 
 class IniFileConfigSource implements WritableConfigSource {
 	private $filePath;

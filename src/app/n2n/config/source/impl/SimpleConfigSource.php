@@ -21,6 +21,8 @@
  */
 namespace n2n\config\source\impl;
 
+use n2n\config\source\ConfigSource;
+
 class SimpleConfigSource implements ConfigSource {
 	private $array;
 	

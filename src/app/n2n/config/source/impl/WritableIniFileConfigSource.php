@@ -24,6 +24,7 @@ namespace n2n\config\source\impl;
 use n2n\io\IoUtils;
 use n2n\util\ini\IniRepresentation;
 use n2n\config\source\WritableConfigSource;
+use n2n\config\source\CorruptedConfigSourceException;
 
 class WritableIniFileConfigSource implements WritableConfigSource {
 	/**
