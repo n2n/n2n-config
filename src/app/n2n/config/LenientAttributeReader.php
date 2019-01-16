@@ -21,7 +21,7 @@
  */
 namespace n2n\config;
 
-use n2n\reflection\property\TypeConstraint;
+use n2n\util\type\TypeConstraint;
 
 class LenientAttributeReader {
 	private $attributes;

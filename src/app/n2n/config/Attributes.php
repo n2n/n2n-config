@@ -21,8 +21,8 @@
  */
 namespace n2n\config;
 
-use n2n\reflection\property\TypeConstraint;
-use n2n\reflection\property\ValueIncompatibleWithConstraintsException;
+use n2n\util\type\TypeConstraint;
+use n2n\util\type\ValueIncompatibleWithConstraintsException;
 use n2n\util\col\ArrayUtils;
 use n2n\util\StringUtils;
 use n2n\util\type\TypeUtils;
