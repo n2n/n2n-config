@@ -21,14 +21,14 @@
  */
 namespace n2n\config\source\impl;
 
-use n2n\io\IoUtils;
+use n2n\util\io\IoUtils;
 use n2n\util\ini\IniRepresentation;
 use n2n\config\source\WritableConfigSource;
 use n2n\config\source\CorruptedConfigSourceException;
 
 class WritableIniFileConfigSource implements WritableConfigSource {
 	/**
-	 * @var \n2n\io\fs\FsPath
+	 * @var \n2n\util\io\fs\FsPath
 	 */
 	private $filePath;
 	

@@ -22,7 +22,7 @@
 namespace n2n\config\source\impl;
 
 use n2n\util\StringUtils;
-use n2n\io\IoUtils;
+use n2n\util\io\IoUtils;
 use n2n\util\JsonDecodeFailedException;
 use n2n\config\source\WritableConfigSource;
 use n2n\config\source\CorruptedConfigSourceException;
