@@ -26,9 +26,9 @@ use n2n\util\ex\Documentable;
 class InvalidConfigurationException extends \RuntimeException implements Documentable {
 	private $documentId;
 
-	public function __construct ($message = null, $code = null, \Exception $previous = null, 
+	public function __construct (string $message = null, int $code = null, \Exception $previous = null,
 			$documentId = null) {
-		parent::__construct($message, $code, $previous);
+		parent::__construct($message ?? '', $code ?? 0, $previous);
 		$this->documentId = $documentId;
 	} 
 	
