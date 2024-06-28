@@ -21,7 +21,7 @@
  */
 namespace n2n\config\source\impl;
 
-use n2n\util\cache\CacheStore;
+use n2n\cache\CacheStore;
 use n2n\config\source\WritableConfigSource;
 
 class CacheStoreConfigSource implements WritableConfigSource {
