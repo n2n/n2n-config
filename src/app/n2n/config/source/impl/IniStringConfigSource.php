@@ -45,7 +45,7 @@ class IniStringConfigSource implements WritableConfigSource {
 	/* (non-PHPdoc)
 	 * @see \n2n\config\source\ConfigSource::createCorruptedConfigSourceException()
 	 */
-	public function createCorruptedConfigSourceException(\Exception $previous = null) {
+	public function createCorruptedConfigSourceException(?\Exception $previous = null) {
 		throw new CorruptedConfigSourceException('Corrupted ini string: ' . StringUtils::reduce($this->iniString, 100),
 				0, $previous);
 	}

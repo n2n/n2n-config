@@ -36,7 +36,7 @@ class ConfigValueExtractor {
 	 * @param string $groupName
 	 * @param string $stage
 	 */
-	public function __construct(array $data, $configSourceName, ConfigProperty $baseProperty = null, 
+	public function __construct(array $data, $configSourceName, ?ConfigProperty $baseProperty = null,
 			$groupName = null, $stage = null) {
 		$this->data = $data;
 		$this->configSourceName = (string) $configSourceName;

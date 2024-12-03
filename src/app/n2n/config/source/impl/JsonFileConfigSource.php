@@ -52,7 +52,7 @@ class JsonFileConfigSource implements WritableConfigSource {
 				(defined('JSON_PRETTY_PRINT') ? JSON_PRETTY_PRINT : null)));
 	}
 	
-	public function createCorruptedConfigSourceException(\Exception $previous = null) {
+	public function createCorruptedConfigSourceException(?\Exception $previous = null) {
 		return new CorruptedConfigSourceException('corrupted json file source: ' . $this->filePath,
 				0, $previous);
 	}

@@ -46,7 +46,7 @@ class IniFileConfigSource implements WritableConfigSource {
 	/* (non-PHPdoc)
 	 * @see \n2n\config\source\ConfigSource::createCorruptedScriptRawDataException()
 	 */
-	public function createCorruptedConfigSourceException(\Exception $previous = null) {
+	public function createCorruptedConfigSourceException(?\Exception $previous = null) {
 		throw new CorruptedConfigSourceException('Corrupted ini file source: ' . $this->filePath, 
 				0, $previous);
 	}

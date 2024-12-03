@@ -35,7 +35,7 @@ class WritableIniStringConfigSource implements WritableConfigSource {
 	
 	public function readArray() {
 	}
-	public function createCorruptedScriptRawDataException(\Exception $previous = null) {
+	public function createCorruptedScriptRawDataException(?\Exception $previous = null) {
 	}
 	public function writeArray(array $rawData) {
 		try {
@@ -55,7 +55,7 @@ class WritableIniStringConfigSource implements WritableConfigSource {
 		return 'ini string (' .$this->getOutputString() . ')';
 	}
 	
-	public function createCorruptedConfigSourceException(\Exception $previous = null) {
+	public function createCorruptedConfigSourceException(?\Exception $previous = null) {
 		return new CorruptedConfigSourceException('Corrupted ini file source: ' 
 				. $this->getOutputString(), 0, $previous);
 	}

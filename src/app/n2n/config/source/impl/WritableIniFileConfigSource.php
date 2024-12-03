@@ -61,7 +61,7 @@ class WritableIniFileConfigSource implements WritableConfigSource {
 		return 'ini file (' . $this->filePath . ')';
 	}
 
-	public function createCorruptedConfigSourceException(\Exception $previous = null) {
+	public function createCorruptedConfigSourceException(?\Exception $previous = null) {
 		return new CorruptedConfigSourceException('Corrupted ini file source: '
 				. $this->filePath, 0, $previous);
 	}
