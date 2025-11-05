@@ -32,11 +32,11 @@ interface ConfigSource {
 	 * Returns a string which identifies a given config source. If the config source gets changed 
 	 * it should be different too. The hash code is used to determine if a cached config source
 	 * is still valid. Generating the hash code should be fast. If your config source is an xml
-	 * file for example you are not supposed to read the whole file and and generete md5-hash over 
-	 * it. A good hash code whould include the timestamp when the file was last modified. If this 
+	 * file for example you are not supposed to read the whole file and generate md5-hash over
+	 * it. A good hash code would include the timestamp when the file was last modified. If this
 	 * is not possible just return null. If this method returns null this config source can't
 	 * be cached. 
-	 * @return string the hash code, null if no hash code can be generated.
+	 * @return null|string the hash code, null if no hash code can be generated.
 	 */
 	public function hashCode();
 	

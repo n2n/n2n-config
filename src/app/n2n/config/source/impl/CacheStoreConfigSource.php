@@ -23,16 +23,17 @@ namespace n2n\config\source\impl;
 
 use n2n\cache\CacheStore;
 use n2n\config\source\WritableConfigSource;
+use n2n\cache\CharacteristicsList;
 
 class CacheStoreConfigSource implements WritableConfigSource {
-	private $cacheStore;
-	private $name;
-	private $characteristics;
+	private CacheStore $cacheStore;
+	private string $name;
+	private CharacteristicsList $characteristicsList;
 	
-	public function __construct(CacheStore $cacheStore, string $name, array $characteristics = array()) {
+	public function __construct(CacheStore $cacheStore, string $name, CharacteristicsList $characteristicsList = new CharacteristicsList([])) {
 		$this->cacheStore = $cacheStore;
 		$this->name = $name;
-		$this->characteristics = $characteristics;
+		$this->characteristicsList = $characteristicsList;
 	}
 	
 	/**
@@ -40,7 +41,7 @@ class CacheStoreConfigSource implements WritableConfigSource {
 	 * @see \n2n\config\source\ConfigSource::readArray()
 	 */
 	public function readArray(): array {
-		$cacheItem = $this->cacheStore->get($this->name, $this->characteristics);
+		$cacheItem = $this->cacheStore->get($this->name, $this->characteristicsList);
 		
 		if ($cacheItem !== null && is_array($data = $cacheItem->getData())) {
 			return $data;
@@ -53,15 +54,15 @@ class CacheStoreConfigSource implements WritableConfigSource {
 	 * {@inheritDoc}
 	 * @see \n2n\config\source\WritableConfigSource::writeArray()
 	 */
-	public function writeArray(array $rawData) {
-		$this->cacheStore->store($this->name, $this->characteristics, $rawData);
+	public function writeArray(array $rawData): void {
+		$this->cacheStore->store($this->name, $this->characteristicsList, $rawData);
 	}
 	
 	/**
 	 * {@inheritDoc}
 	 * @see \n2n\config\source\ConfigSource::hashCode()
 	 */
-	public function hashCode() {
+	public function hashCode(): ?string {
 		return null;
 	}
 
